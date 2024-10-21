@@ -4,8 +4,7 @@
 
 class Series {
 public:
-    
-    double FuncA();
+    double FuncA(int n);
 };
 
 #endif
