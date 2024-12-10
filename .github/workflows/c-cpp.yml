@@ -3,16 +3,18 @@ name: Build Tarball
 on:
   push:
     branches:
-      - branchAutoMake
+      - branchAutomake
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build traball
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential autoconf automake
+      - name: Build tarball
         run: |
           ./configure
-	  make dist
-
-
+          make dist
