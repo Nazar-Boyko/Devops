@@ -1,21 +1,16 @@
-name: C/C++ CI
+name: Build
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch: 
-    branch: ["main"]
+    branches:
+      - branchMake
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
+      - uses: actions/checkout@v3
+      - name: Build the program
+        run: |
+          make
+
