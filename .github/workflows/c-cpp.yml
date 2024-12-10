@@ -1,9 +1,9 @@
-name: Build Tarball
+name: Build Debain Package
 
 on:
   push:
     branches:
-      - branchAutomake
+      - branchAutoPackage
 
 jobs:
   build:
@@ -14,7 +14,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential autoconf automake
-      - name: Build tarball
+      - name: Build Debain package
         run: |
           ./configure
-          make dist
+          make
+	  checkinstall --pkgname=program --pkgversion=1.0 --default
+
