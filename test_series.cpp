@@ -1,9 +1,12 @@
 #include "series.h"
+#include <cmath>
 #include <cassert>
 
 int main() {
-	Series series;
-	assert(series.FuncA(3) == 0.833333);
-	return 0;	
+    Series series;
+    double result = series.FuncA(3);
+    double expected = 0.833333;
+    assert(std::fabs(result - expected) < 1e-6);
+    return 0;
 }
 
