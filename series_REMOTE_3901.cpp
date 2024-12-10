@@ -1,6 +1,5 @@
 // series.cpp
 #include "series.h"
-#include "cmath"
 
 double Series::FuncA(int n) {
     double sum = 0.0;
@@ -10,4 +9,3 @@ double Series::FuncA(int n) {
     }
     return sum;
 }
-
