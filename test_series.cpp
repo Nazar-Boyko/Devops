@@ -2,7 +2,7 @@
 #include <cassert>
 
 int main() {
-	Series series:
+	Series series;
 	assert(series.FuncA(3) == 0.833333);
 	return 0;	
 }
