@@ -1,9 +1,9 @@
-name: Build Debian Package
+name: Run Tests
 
 on:
   push:
     branches:
-      - branchAutoPackage
+      - branchAutoTest
 
 jobs:
   build:
@@ -14,8 +14,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential autoconf automake checkinstall
-      - name: Build Debian package
+      - name: Run unit tests
         run: |
           ./configure
-          make
-          sudo checkinstall --pkgname=program --pkgversion=1.0 --default
+          make check
