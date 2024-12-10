@@ -3,7 +3,7 @@ name: Build Tarball
 on:
   push:
     branches:
-      - branchAutoMake
+      - branchAutomake
 
 jobs:
   build:
