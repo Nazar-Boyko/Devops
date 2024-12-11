@@ -38,9 +38,9 @@ jobs:
 
     - name: Create and push multi-architecture manifest
       run: |
+        # Create the manifest list and push it
         docker manifest create nazarboyko/http-server:latest \
-          --amend nazarboyko/http-server:latest-amd64 \
-          --amend nazarboyko/http-server:latest-arm64
+          nazarboyko/http-server:latest-amd64 \
+          nazarboyko/http-server:latest-arm64
 
         docker manifest push nazarboyko/http-server:latest
-
