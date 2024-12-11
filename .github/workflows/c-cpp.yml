@@ -26,5 +26,5 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: <your-dockerhub-username>/http-server:latest
+        tags: nazarboyko/http-server:latest
         platforms: linux/amd64,linux/arm64
