@@ -2,11 +2,10 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=ninonteractive
 # Install dependencies
-RUN apt-get update -y && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     g++ \
     libboost-all-dev \
     cmake \
-    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
