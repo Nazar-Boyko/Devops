@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=ninonteractive
 RUN apt-get update && apt-get install -y \
     g++ \
     libboost-all-dev \
-    cmake \
+    make \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
