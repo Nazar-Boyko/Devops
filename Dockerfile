@@ -18,14 +18,15 @@ RUN git clone https://github.com/Nazar-Boyko/Devops.git /app
 # Set the working directory to where the application code is located
 WORKDIR /app
 
+COPY . /app
 # Build the application
-RUN g++ -std=c++11 -o http_server http_server.cpp series.cpp -lboost_system -pthread
+RUN ls /app && g++ -std=c++11 -o http_server http_server.cpp series.cpp -lboost_system -pthread
 
 # Step 2: Copy the compiled executable into an Alpine-based image
 FROM alpine:latest
 
 # Install runtime dependencies
-RUN apk add --no-cache libstdc++ libgcc libboost-system
+RUN apk add --no-cache libstdc++ libgcc boost-system strace
 
 # Copy the built executable from the builder image
 COPY --from=builder /app/http_server /usr/local/bin/http_server
